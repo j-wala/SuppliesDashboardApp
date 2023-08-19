@@ -26,13 +26,13 @@ export default defineComponent({
         new SupplyItem(
           'Product 1',
           'Category A',
-          Date('2023-08-31'),
+          new Date('2023-08-31'),
           'https://example.com/product1.jpg'
         ),
         new SupplyItem(
           'Product 2',
           'Category B',
-          Date('2023-09-15'),
+          new Date('2023-09-15'),
           'https://example.com/product2.jpg'
         ),
         // Add more items as needed
