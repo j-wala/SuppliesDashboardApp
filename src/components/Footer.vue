@@ -1,17 +1,12 @@
 <template>
   <footer class="app-footer">
-    <p>&copy; {{ currentYear }} J.W. All rights reserved.</p>
+    <p>J.W.</p>
   </footer>
 </template>
 
 <script>
 export default {
   name: 'Footer',
-  computed: {
-    currentYear() {
-      return new Date().getFullYear();
-    },
-  },
 };
 </script>
 
