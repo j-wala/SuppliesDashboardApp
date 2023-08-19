@@ -1,29 +1,39 @@
 <template>
   <div id="app">
     <Header />
-    <Dashboard />
+    <main class="app-content">
+      <Dashboard />
+    </main>
     <Footer />
   </div>
 </template>
 
 <script>
-//import Header from './components/Header.vue';
+import Header from './components/Header.vue';
 import Dashboard from './components/Dashboard.vue';
-//import Footer from './components/Footer.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
   components: {
-    //Header,
+    Header,
     Dashboard,
-    //Footer,
+    Footer,
   },
 };
 </script>
 
 <style>
 #app {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
