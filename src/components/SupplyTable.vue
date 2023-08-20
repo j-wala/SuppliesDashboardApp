@@ -28,6 +28,7 @@ const props = defineProps({
   supplies: Array<SupplyItem>
 })
 
+// TODO: Add column sorting
 
 </script>
 
