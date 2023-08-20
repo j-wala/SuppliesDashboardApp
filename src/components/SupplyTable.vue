@@ -1,4 +1,5 @@
 <template>
+<h2>Supplies</h2>
   <div class="supply-table">
     <table>
       <thead>
@@ -10,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, index) in supplyData" :key="index">
+        <tr v-for="(item, index) in props.supplies" :key="index">
           <td>{{ item.name }}</td>
           <td>{{ item.category }}</td>
           <td>{{ item.bestBeforeDate }}</td>
@@ -21,33 +22,20 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import {SupplyItem} from "@/data/supplyItem";
-export default {
-  name: 'SupplyTable',
-    data() {
-        return {
-            supplyData: [
-                new SupplyItem(
-                    'Product 1',
-                    'Category A',
-                    '2023-08-31',
-                    'https://example.com/product1.jpg'
-                ),
-                new SupplyItem(
-                    'Product 2',
-                    'Category B',
-                    '2023-09-15',
-                    'https://example.com/product2.jpg'
-                ),
-                // Add more items as needed
-                ],
-        };
-    },
-};
+const props = defineProps({
+  supplies: Array<SupplyItem>
+})
+
+
 </script>
 
 <style scoped>
+.supply-table {
+align-self: center;
+
+}
 .product-photo {
   max-width: 100px;
   max-height: 100px;
