@@ -25,6 +25,8 @@ const props = defineProps({
   supplies: Array<SupplyItem>
 })
 
+
+
 function generateIntFromInterval(min: number,max:number):number{
   return Math.random() * (max - min) + min;
 }
