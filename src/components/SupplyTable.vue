@@ -15,7 +15,7 @@
           <td>{{ item.name }}</td>
           <td>{{ item.category }}</td>
           <td>{{ item.getFormattedDate() }}</td>
-          <td><img :src="item.photoUrl" alt="Product Photo" /></td>
+          <td><img :src="item.photoUrl" alt="Product Photo" class="product-photo" /></td>
         </tr>
       </tbody>
     </table>
@@ -38,8 +38,8 @@ align-self: center;
 
 }
 .product-photo {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 20%;
+  max-height: 20%;
 }
 
 </style>
