@@ -12,15 +12,6 @@
 import Header from './components/Header.vue';
 import Dashboard from './components/Dashboard.vue';
 import Footer from './components/Footer.vue';
-
-/* export default {
-  name: 'App',
-  components: {
-    Header,
-    Dashboard,
-    Footer,
-  },
-}; */
 </script>
 
 <style>
@@ -28,6 +19,7 @@ import Footer from './components/Footer.vue';
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-width: 100%;
 }
 
 .app-content {
@@ -36,4 +28,5 @@ import Footer from './components/Footer.vue';
   justify-content: center;
   align-items: center;
 }
+
 </style>

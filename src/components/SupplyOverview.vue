@@ -2,7 +2,7 @@
   <div class="supply-overview">
     <!-- Display summary data like total supplies, pending orders, etc. -->
     <h2>Overview</h2>
-    {{ supplies }}
+    <!--{{ supplies }}-->
     <div>
       <h3>Expired Products</h3>
       <table>
@@ -16,7 +16,7 @@
         <tbody>
           <tr v-for="item in sortedExpiredItems" :key="item.name">
             <td>{{ item.name }}</td>
-            <td>{{ item.bestBeforeDate }}</td>
+            <td>{{ item.bestBeforeDate.toDateString() }}</td>
             <td>{{ item.category }}</td>
           </tr>
         </tbody>
@@ -34,7 +34,7 @@
         <tbody>
           <tr v-for="item in sortedSoonToExpireItems" :key="item.name">
             <td>{{ item.name }}</td>
-            <td>{{ item.bestBeforeDate }}</td>
+            <td>{{ item.bestBeforeDate.toDateString() }}</td>
             <td>{{ item.category }}</td>
           </tr>
         </tbody>
@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { SupplyItem } from '@/data/supplyItem'
 
 const props = defineProps({
@@ -66,7 +66,7 @@ const soonToExpireItems = computed(() => {
 })
 
 // TODO: Sort this whole thing out...
-console.log("ExpiredItems:")
+console.log('ExpiredItems:')
 console.log(expiredItems.value)
 
 const sortedExpiredItems = ref<SupplyItem[]>([])
@@ -84,12 +84,22 @@ const sortSoonToExpireBy = (key: keyof SupplyItem) => {
   )
 }
 
-/*onMounted(() => {
-  sortExpiredBy('bestBeforeDate')
-  sortSoonToExpireBy('bestBeforeDate')
-})*/
+// Initialize the sorted tables when the component is mounted
+onMounted(() => {
+  sortExpiredBy('name')
+  sortSoonToExpireBy('name')
+})
+
 </script>
 
 <style scoped>
 /* Styling for the overview component */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
 </style>

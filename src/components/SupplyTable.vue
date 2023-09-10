@@ -14,7 +14,7 @@
         <tr v-for="(item, index) in props.supplies" :key="index">
           <td>{{ item.name }}</td>
           <td>{{ item.category }}</td>
-          <td>{{ item.bestBeforeDate }}</td>
+          <td>{{ item.getFormattedDate() }}</td>
           <td><img :src="item.photoUrl" alt="Product Photo" /></td>
         </tr>
       </tbody>
@@ -41,4 +41,5 @@ align-self: center;
   max-width: 100px;
   max-height: 100px;
 }
+
 </style>
