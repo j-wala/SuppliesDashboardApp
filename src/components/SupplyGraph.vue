@@ -76,8 +76,6 @@ function updateChart() {
     ]
   }
 }
-
-// TODO: Fix that data is getting appended instead of replaced...
 </script>
 
 <style scoped>
