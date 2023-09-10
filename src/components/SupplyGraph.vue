@@ -20,7 +20,7 @@ import {
 } from 'chart.js'
 import { Bar } from 'vue-chartjs'
 import { SupplyItem } from '@/data/supplyItem'
-import {computed, watch} from "vue";
+import {computed} from "vue";
 
 const props = defineProps({
   supplies: Array<SupplyItem>
@@ -52,6 +52,10 @@ function updateChart() {
   }, {})
 
   console.log(groupedItems)
+
+  // Clear Bargraph data and labels to generate again
+  barGraphLabels = []
+  barGraphData = []
 
   for (const k in groupedItems) {
     barGraphLabels.push(k)
