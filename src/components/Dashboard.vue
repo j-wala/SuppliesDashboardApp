@@ -23,6 +23,10 @@ import AddSupplyItem from '@/components/AddSupplyItem.vue'
 import { SupplyItem } from '@/data/supplyItem'
 import { ref } from 'vue'
 
+/*const props = defineProps({
+  supplies: Array<SupplyItem>
+})*/
+
 const supplies = ref([
   new SupplyItem('Product_1', 'Cat A', new Date('2023-08-18'), 'https://icon-library.com/images/pixel-icon-tumblr/pixel-icon-tumblr-20.jpg'),
   new SupplyItem('Product_2', 'Cat A', new Date('2023-09-10'), 'https://icon-library.com/images/pixel-icon-tumblr/pixel-icon-tumblr-20.jpg'),
